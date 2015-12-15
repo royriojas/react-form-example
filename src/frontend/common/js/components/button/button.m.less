@@ -1,0 +1,48 @@
+button.button {
+  min-width: 30px;
+  min-height: 30px;
+  border: 0;
+  background: #efefef;
+  box-shadow: 0 0 5px rgba(0,0,0,.4);
+
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 6px rgb(96, 184, 226);
+  }
+
+  &.invalid {
+    outline: none;
+    box-shadow: 0 0 6px rgba(255, 109, 109, .8);
+
+    .label {
+      color: rgba(255, 109, 109, .8);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 6px rgba(255, 109, 109, .8);
+    }
+  }
+
+  &.primary {
+    background: #2185d0;
+
+    .label {
+      color: #fff;
+    }
+  }
+
+  &.secondary {
+    background: #00b5ad;
+
+    .label {
+      color: #fff;
+    }
+  }
+}
+
+.label {
+  color: #666;
+}

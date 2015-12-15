@@ -1,0 +1,41 @@
+.post {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 130px;
+}
+
+.picture {
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+}
+
+button.transparent {
+  transition: background .5s ease-out, color .5s ease-out;
+  color: rgba(255,255,255,.5);
+  background: rgba(0,0,0,.5);
+  box-shadow: none;
+
+  &:hover {
+    color: #fff;
+    background: rgba(0,0,0,.7);
+  }
+
+  &.cautionary {
+    background: rgba(183,62,62,.5);
+
+    &:hover {
+      background: rgba(183,62,62,.7);
+    }
+  }
+}

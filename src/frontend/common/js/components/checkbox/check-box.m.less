@@ -1,0 +1,46 @@
+@import '../../../../libs/font-awesome/fa.mixins.less';
+
+a.check-box {
+  display: inline-block;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgb(96, 184, 226);
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+  }
+}
+
+.checked .icon {
+  &:before {
+    .mxn-xfa-check-square-o(current);
+
+    margin-left: 2px;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rem/16;
+  height: 31rem/16;
+  color: #999;
+
+  &:before {
+    .mxn-xfa-square-o(props, current);
+
+    font-size: 16px;
+  }
+}
+
+.label {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 30rem/16;
+  padding-right: 8px;
+  padding-left: 3px;
+}

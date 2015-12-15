@@ -1,0 +1,98 @@
+@import '../../../../libs/font-awesome/fa.mixins.less';
+
+.chrome {
+  display: inline-block;
+
+  &.invalid .wrapper {
+    .clear-icon:before {
+      color: rgba(255, 109, 109, .5);
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 32rem/16;
+  transition: box-shadow .2s ease-out;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+
+  .disabled & {
+    opacity: .5;
+    border: 1px solid #eee;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: ' ';
+    transition: all .3s;
+    transform: scaleX(0);
+    background: #4183c4;
+
+    backface-visibility: hidden;
+  }
+
+  .focused &:after {
+    transform: scaleX(1);
+  }
+
+  .invalid.focused &:after {
+    background: rgba(255, 109, 109, .5);
+  }
+}
+
+.txt-icon,
+.clear-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30rem/16;
+  height: 30rem/16;
+  cursor: pointer;
+}
+
+.txt-icon:before {
+  color: #999;
+}
+
+.clear-icon {
+  transition: opacity .3s ease-out;
+  opacity: 0;
+
+  &.on {
+    opacity: 1;
+  }
+
+  &:before {
+    .mxn-xfa-close(props, current);
+
+    color: #999;
+  }
+}
+
+.textentry {
+  flex: 1;
+  border: 0;
+
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+}
+
+input.textentry {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  padding-left: 10px;
+  color: #444;
+
+  &.icon-visible {
+    padding: 0;
+  }
+}

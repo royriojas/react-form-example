@@ -1,0 +1,52 @@
+@anim-fade-translate-short: 10px;
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(@anim-fade-translate-short);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.valid-message {
+  font-size: 13px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  margin: 0;
+  animation: fadeInRight .5s ease-out;
+  text-align: right;
+  color: green;
+}
+
+.validating {
+  font-size: 13px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  margin: 0;
+  animation: fadeInRight .5s ease-out;
+  text-align: right;
+  color: rgba(128, 140, 138, .55);
+}
+
+.validator,
+p.validator {
+  font-size: 13px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  display: none;
+  margin: 0;
+  text-align: right;
+  color: #d05252;
+
+  &.on {
+    display: block;
+    animation: fadeInRight .5s ease-out;
+  }
+}

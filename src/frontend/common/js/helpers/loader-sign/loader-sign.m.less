@@ -1,0 +1,36 @@
+@import '../../../../libs/font-awesome/fa.mixins.less';
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &:global(.on) {
+    display: flex;
+
+    &:global(.enter) {
+      animation: __global__fadeIn .5s ease-out;
+    }
+
+    &:global(.exit) {
+      animation: __global__fadeOut .5s ease-out;
+    }
+  }
+}
+
+.affordance {
+  .mxn-xfa-refresh(props, before);
+
+  display: block;
+  animation: __global__spin infinite .8s linear;
+
+  &:before {
+    font-size: 2em;
+    color: rgba(0,0,0, .3);
+  }
+}
